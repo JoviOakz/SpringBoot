@@ -5,7 +5,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bosch.example.model.User;
 import com.bosch.example.repositories.UserJPARepository;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -14,6 +17,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class UserController {
     @Autowired
     UserJPARepository repo;
+
+    @GetMapping("user")
+    public List<User> getMethodName(String country) {
+        return repo.findByCountry(country);
+    }
 
     @PostMapping("/user")
     public String postMethodName(@RequestBody User user) {
