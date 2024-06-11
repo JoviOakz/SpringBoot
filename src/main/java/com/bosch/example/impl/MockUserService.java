@@ -14,12 +14,14 @@ public class MockUserService implements UserService{
 
     public MockUserService() {
         var user = new User();
+
+        user = new User();
         user.setId(1l);
         user.setCountry("Brazil");
         user.setUsername("Don");
         users.add(user);
-
-        var user = new User();
+        
+        user = new User();
         user.setId(1l);
         user.setCountry("Brazil");
         user.setUsername("Niltin");
