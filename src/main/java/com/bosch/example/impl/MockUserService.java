@@ -27,6 +27,6 @@ public class MockUserService implements UserService{
 
     @Override
     public List<User> findByUsername(String username) {
-        return repo.findByUsernameContaining(username);
+        return users.stream().filter(u -> u.getUsername().contains(username)).toList();
     }
 }
