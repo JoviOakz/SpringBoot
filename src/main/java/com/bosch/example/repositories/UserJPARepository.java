@@ -11,4 +11,5 @@ import com.bosch.example.model.User;
 public interface UserJPARepository extends JpaRepository<User, Long> {
 
     List<User> findByCountry(String country);
+    List<User> findByUsernameContaining(String name);
 }
