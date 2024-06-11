@@ -12,6 +12,20 @@ import com.bosch.example.services.UserService;
 public class MockUserService implements UserService{
     private List<User> users = new ArrayList<>();
 
+    public MockUserService() {
+        var user = new User();
+        user.setId(1l);
+        user.setCountry("Brazil");
+        user.setUsername("Don");
+        users.add(user);
+
+        var user = new User();
+        user.setId(1l);
+        user.setCountry("Brazil");
+        user.setUsername("Niltin");
+        users.add(user);
+    }
+
     @Autowired
     UserJPARepository repo;
 
